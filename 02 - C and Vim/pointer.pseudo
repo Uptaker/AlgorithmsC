@@ -1,0 +1,22 @@
+// num of elements
+
+current = head
+int sum = 0
+while current != NULL
+	current = current.next
+	sum++
+return sum
+
+// add N elements to node
+newHead = New(head)
+head.next = NULL
+newNode = New(node)
+node.next = NULL
+current = node
+while (has data)
+	...
+^^^ unfinished? uhh uh uhhhhhhhhhhh
+
+
+	
+	

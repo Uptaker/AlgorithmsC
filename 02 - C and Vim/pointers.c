@@ -45,7 +45,14 @@ main()
     else {
         printf("Muutujad ptr1 ja ptr2 ei viita samasse kohta.\n");
     }
- 
+
+    ptr3 = malloc(sizeof (int));
+    scanf("%d", ptr3);
+
+    printf("ptr3 num %d ptr3 address %p\n", *ptr3, ptr3);
+    ptr1 = ptr3;
+    printf("ptr v22rtus olgu 20 pls - %d\n", *ptr);
+    printf("k adr %p ja ptr sisu %d\n", &k, *ptr);
 }
 
 
