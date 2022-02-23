@@ -37,7 +37,28 @@ struct element *readNotes() {
     return head;
 }
 
-int main(void){
+void checkNodeForInt(struct element *current, int numToCheck) {
+    int index = 0;
+    while (current != NULL) {
+	if (current->info == numToCheck) return printf("Element exists at index %d", index);
+	current = current->next;
+	index++;
+    }
+    printf("Element does not exist");
+    
+}
+
+int scanInt() {
+    printf("Enter a new number:\n");
+    int num;
+    scanf("%d", &num);
+    printf("Entered %d\n", num);
+    return num;
+}
+
+int main(void) {
     struct element *head = readNotes();
     printNodes(head);
+    int newInt = scanInt();
+    checkNodeForInt(head, newInt);
 }
