@@ -61,4 +61,40 @@ int main(void) {
     printNodes(head);
     int newInt = scanInt();
     checkNodeForInt(head, newInt);
+
+    struct element *tail = head;
+    int N = 0;
+    while(tail->next != NULL) {
+	N++;
+	tail = tail->next;
+    }
+
+    struct element *node;
+    for (int i = 1; i < N; i++) {
+	/* another way
+	node = malloc(sizeof(*node));
+	node->next = NULL;
+	node->info = i;
+	tail->next = node;
+	tail = node; */
+	tail->next = malloc(sizeof *node);
+	tail = tail->next;
+	tail->info = i;
+	tail->next = NULL;
+    }
+    printNodes(head);
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
