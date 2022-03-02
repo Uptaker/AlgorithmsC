@@ -11,12 +11,7 @@ void stackInit(int maxSize) {
 }
 
 int stackEmpty(void) { 
-	if (top == 0) {
-		return 1;
-	}
-    else {
-    	return 0;
-	}
+	return (top == 0) ? 1 : 0;
 }
 
 void stackPush(int item) { 
