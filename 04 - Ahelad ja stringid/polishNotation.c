@@ -44,12 +44,8 @@ main() {
         if (expression[i] == '+' || expression[i] == '-' ||
             expression[i] == '*' || expression[i] == '/') {
             stackPush(expression[i]);
-
         } else if (expression[i] == ')') {
             printf("%c ", stackPop());
-
-        } else {
-            printf("%c ", expression[i]);
-        }
+        } else printf("%c ", expression[i]);
     }
 }
