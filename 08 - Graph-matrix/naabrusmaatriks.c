@@ -15,7 +15,7 @@ int main(void) {
 
     // create matrix with nulls
     for (i = 0; i < vertex; i++) {
-        for (j = 0; j < edge; j++) {
+        for (j = 0; j < vertex; j++) {
             AdjMatrix[i][j] = 0;
         }
     }
@@ -30,7 +30,7 @@ int main(void) {
 
     // print matrix
 	for (i = 0; i < vertex; i++) {
-        for (j = 0; j < edge; j++) {
+        for (j = 0; j < vertex; j++) {
         	printf("%3d", AdjMatrix[i][j]);
         }
         printf("\n");
