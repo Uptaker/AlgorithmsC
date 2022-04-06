@@ -6,10 +6,8 @@
 
 int main(void) {
    FILE *tf = NULL;
-    int i, j, vertex, edge;
+    int i, j, vertex, edge, vert1, vert2, input;
     int AdjMatrix[maxN][maxN];
-    int e;
-    int v;
    
    tf = fopen("graaf_topo1.txt","r");  
 
@@ -24,9 +22,9 @@ int main(void) {
     printf("\n");
 
     // fill empty matrix with 1's where needed
-    for (i = 0; i < vertex; i++) {
-        fscanf(tf,"%d %d", &v, &e);
-        AdjMatrix[v][e] = 1;
+    for (i = 0; i < edge; i++) {
+        fscanf(tf,"%d %d", &vert1, &vert2);
+        AdjMatrix[vert1][vert2] = 1;
     }
     printf("\n");
 
@@ -36,6 +34,18 @@ int main(void) {
         	printf("%3d", AdjMatrix[i][j]);
         }
         printf("\n");
+    }
+
+    // user selects vertex
+    printf("%s ", "Which vertex neighbors to display?");
+    scanf("%d", &input);
+
+    // print adjacent vertexes from matrix
+    for (i = 0; i < vertex; i++) {
+        
+        if (AdjMatrix[input][i] == 1) {
+            printf("%d\n", i);
+        }
     }
  
 	return 0; 
