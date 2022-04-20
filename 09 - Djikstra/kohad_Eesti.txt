@@ -1,0 +1,267 @@
+266
+Tallinn
+Keila-Joa
+Keila
+rist 1
+rist 2
+J�ri
+rist3
+Kloogaranna
+Padise
+Saue
+��sm�e
+rist 4
+Kose-Risti
+Peningi
+rist 8
+Paldiski
+N�va
+Kuij�e
+Risti
+Varbola
+rist 5
+rist 6
+Kehra
+J�gala
+rist 7
+Maardu
+Riguldi
+Linnam�e
+Palivere
+Koluvere
+Orgita
+Uusk�la
+rist 9
+M�o
+rist 10
+rist 11
+rist 12
+Nigula
+Oonga
+Laik�la
+Loodna
+M�rjamaa
+Rapla
+Paide
+M�ek�la
+K�ravete
+rist 13
+Loobu
+Haapsalu
+Lihula
+J�divere
+Kergu
+T�ri
+Paia
+rist 14
+rist 15
+Ambla
+Loksa
+rist 16
+Tapa
+Viitna
+Rohuk�la
+Karuse
+rist 17
+P�rnu-Jaagupi
+P�rnj�e
+S�revere
+Arkma
+rist 18
+J�rva-Jaani
+V�geva
+Rakke
+Roosna-Alliku
+Tamsalu
+Palmse
+V�su
+Kadrina
+rist 19
+Vormsi
+Heltermaa
+Virtsu
+Vatla
+Audru
+Are
+Selja
+Dirhami
+V�ndra
+V�hma
+P�ltsamaa
+rist 20
+Ebavere
+rist 21
+Simuna
+V�ike-Maarja
+Kullenga
+rist 22
+Assamalla
+Rakvere
+Potsu
+Haljala
+Suurem�isa
+Kuivastu
+T�stamaa
+Pootsi
+P�rnu
+Lavassaare
+rist 23
+Tori
+Suure-Jaani
+Mudiste
+rist 24
+K�revere
+J�geva
+Paasvere
+Vinni
+S�meru
+Vihula
+Kunda
+K�rdla
+K�ina
+rist 25
+Lao
+rist 26
+Sindi
+Viljandi
+Kolga-Jaani
+Tartu
+K�rkna
+Kaarepere
+rist 27
+Avinurme
+Roela
+rist 28
+S�m
+Pada
+rist 29
+Emmaste
+Orissaare
+rist 30
+Uulu
+Kilingi-N�mme
+Sultsi
+Viiratsi
+Leie
+rist 31
+Sangla
+Elva
+Reola
+Luunja
+rist 32
+Vanassaare
+Mustvee
+Tudulinna
+Anguse
+rist 33
+Purtse
+Lehtma
+K�rgessaare
+Puski
+S�ru
+Leisi
+Ratla
+P�ide
+H��demeeste
+T�itoja
+rist 34
+Abja-Paluoja
+Karksi-Nuia
+Pikasilla
+Aovere
+Rannu
+R�ngu
+Pangodi
+Tatra
+Voorek�la
+Mooste
+Kodavere
+Raja
+Rannapungerja
+rist 35
+Iisaku
+Tudu
+Sonda
+P�ssi
+rist 36
+Luidja
+rist 37
+V�hma
+Tika
+Masa
+Ikla
+M�isak�la
+T�rva
+Koosa
+rist 38
+Otep��
+Kanepi
+Puskaru
+P�lva
+Himmaste
+Leevaku
+Kallaste
+Kauksi
+rist 39
+J�uga
+Kivi�li
+rist 40
+Ristna
+Mustjala
+Kuressaare
+Upa
+rist 41
+Roobe
+Varnja
+Alatskivi
+T�lliste
+Sangaste
+rist 42
+V�imela
+Vinso
+R�pina
+rist 48
+Ahtme
+Edivere
+Kohtla-J�rve
+rist 43
+Kihelkonna
+T�lli
+Tehumardi
+Pihtla
+Valga
+Laatre
+rist 44
+rist 45
+rist 46
+V�ru
+Puusepa
+rist 47
+Mehikoorma
+Vasknarva
+Rausvere
+J�hvi
+L�manda
+Kogula
+S��re
+rist 49
+Antsla
+Vaabina
+S�merpalu
+Nursi
+Kose
+Obinitsa
+V�rska
+Sillam�e
+M�niste
+R�uge
+K�bli
+Vastseliina
+Peeterristi
+M��si
+Murati
+rist 50
+Luhamaa
+Narva
+Narva-J�esuu
+Jaanilinn
