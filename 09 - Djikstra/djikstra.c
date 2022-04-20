@@ -69,11 +69,24 @@ int main(void) {
     printf("Matrix printed to output.txt\n");
     fclose(tf);
 
-    int input; 
-    printf("Input city index to return its name\n");
-    scanf("%d", &input);
-    input--;
-    printf("City is %s", places[input]);
+    printf("Input city index to start from\n");
+    scanf("%d", &start); start--;
+
+    printf("Input city index to return from\n");
+    scanf("%d", &end); end--;
+
+    if (start > (numOfPlaces - 1) || start < 0 || end > (numOfPlaces - 1) || end < 0) {
+        printf("Can only select indexes from 1 to %d!", numOfPlaces);
+        printf("%d %d", start, end);
+        return 0;
+    }
+
+    if (start == end) {
+        printf("Start and end cannot be the same!");
+        return 0;
+    }
+
+    printf("You want to go from %s to %s", places[start], places[end]);
 
 	return 0; 
 
