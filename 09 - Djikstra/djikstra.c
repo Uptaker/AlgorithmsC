@@ -54,6 +54,7 @@ int main(void) {
     for (i = 0; i < numOfEdges; i++) {
         fscanf(tf, "%d %d %d", &start, &end, &dist);
         matrix[start][end] = dist;
+        matrix[end][start] = dist;
     }
     fclose(tf);
 
