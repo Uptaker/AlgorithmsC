@@ -72,7 +72,7 @@ int main(void) {
     // ask user for start and end positions
     printf("Input city index to start from\n");
     scanf("%d", &start); start--;
-    printf("Input city index to return from\n");
+    printf("Input city index to end in\n");
     scanf("%d", &end); end--;
 
     // allowed index check
