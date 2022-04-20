@@ -38,18 +38,17 @@ int main(void) {
     }
 
     tf = fopen("seosed_Eesti.txt", "r");
-
     fscanf(tf,"%d %d",&numOfPlaces,&numOfEdges);
     printf("places: %d edges: %d\n",numOfPlaces, numOfEdges);
 
-    // empty matrix with nulls
+    // create empty matrix with nulls
     for (i = 0; i < numOfPlaces; i++) {
         for (j = 0; j < numOfPlaces; j++) {
             matrix[i][j] = 0;
         }
     }
 
-    // fill matrix with distance
+    // fill matrix with distances
     int start, end, dist;
     for (i = 0; i < numOfEdges; i++) {
         fscanf(tf, "%d %d %d", &start, &end, &dist);
@@ -58,7 +57,7 @@ int main(void) {
     }
     fclose(tf);
 
-    // print matrix (save output to file because it's too large)
+    // print matrix to output.txt (because it's too large for terminal)
     tf = fopen("output.txt", "w");
     printf("Printing matrix...\n");
 	for (i = 0; i < numOfPlaces; i++) {
