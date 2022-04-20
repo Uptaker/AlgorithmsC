@@ -16,7 +16,6 @@ int main(void) {
     
     tf = fopen("kohad_Eesti.txt","r");
 
-    // save number of edges & places
     fscanf(tf,"%d",&numOfPlaces);
     char places[numOfPlaces][maxN];
     int matrix[numOfPlaces][numOfPlaces];
@@ -37,6 +36,7 @@ int main(void) {
         printf("%d %s\n", i, places[i]);
     }
 
+    // save number of edges & places from file's first line
     tf = fopen("seosed_Eesti.txt", "r");
     fscanf(tf,"%d %d",&numOfPlaces,&numOfEdges);
     printf("places: %d edges: %d\n",numOfPlaces, numOfEdges);
@@ -69,19 +69,18 @@ int main(void) {
     printf("Matrix printed to output.txt\n");
     fclose(tf);
 
+    // ask user for start and end positions
     printf("Input city index to start from\n");
     scanf("%d", &start); start--;
-
     printf("Input city index to return from\n");
     scanf("%d", &end); end--;
 
+    // allowed index check
     if (start > (numOfPlaces - 1) || start < 0 || end > (numOfPlaces - 1) || end < 0) {
         printf("Can only select indexes from 1 to %d!", numOfPlaces);
         printf("%d %d", start, end);
         return 0;
-    }
-
-    if (start == end) {
+    } else if (start == end) {
         printf("Start and end cannot be the same!");
         return 0;
     }
