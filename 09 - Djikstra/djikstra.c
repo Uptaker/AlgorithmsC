@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 #define maxN 20
+#define infinity 2147000000
 
 int main(void) {
     FILE *tf=NULL;
