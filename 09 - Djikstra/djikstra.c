@@ -72,11 +72,8 @@ int main(void) {
     int input; 
     printf("Input city index to return its name\n");
     scanf("%d", &input);
+    input--;
     printf("City is %s", places[input]);
-
-    // for (i = 0; i < numOfPlaces - 1; i++) {
-        
-    // }
 
 	return 0; 
 
