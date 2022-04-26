@@ -1,0 +1,142 @@
+﻿Vim - Vi IMproved
+
+Raamat A Byte of Vim 
+https://www.gitbook.com/book/swaroopch/byte-of-vim/details
+
+Eesti keeles saab natuke lugeda siit: https://viki.pingviin.org/VIM
+Lisaks internetis kättesaadav Learning the vi and Vim Editors,
+mis on loetav siin: https://library.oreilly.com/book/9780596529833/learning-the-vi-and-vim-editors/toc
+
+Töötab kahes režiimis: 
+- sisestusrežiim (insert mode) - lülitumiseks i (aga ka mõned muud võimalused), saab trükkida ja teksti parandada üsna tavalisel viisil.
+- käsurežiim (normal mode) - lülitumiseks Esc
+Erinevad tähed ja sõnad lasevad sisestada käske teksti muutmiseks (nt kopeerimine, ridade kustutamine jms), salvestamiseks jne.
+Osa käske jagatakse teksti sees (nt rea või ridade kopeerimine või kustutamine), osa eraldi käsureal ekraani all servas, 
+milleks eelnevalt trükitakse : (nt otsimine, asendamine, salvesatmine)
+
+Faili moodustamine, kirjutamine ja salvestamine
+-----------------------------------------------
+Käivitad vimi'i:
+vim falinimi
+Kui fail olemas, avatakse see. Kui ei ole, tekib vastava nimega fail.
+Kui vim töötab (ja fail on avatud), saab avada uue faili nii
+Trüki käsurežiimis (ESC)
+:e[dit] failinimi  (edit või lühemalt e)
+Faili salvestamine
+:w[rite]
+Vim-ist väljumine
+:q[uit]
+Väljumine viimaseid muudatusi salvestamata
+:q!
+Käsud töötavad ka koos, nt salvesta ja välju
+:wq
+Teksti sisestamiseks mine Kirjutamisrežiimi i
+Siin saad liikuda täiesti tavaliselt mööda juba kirjutatud teksti, lisada ridu, kustutada tähti, kirjutada vahele jms
+
+Kokkuvõtteks lihtsaim faili loomise "algoritm":
+vim failinimi
+i (sisestusrežiim)
+Trüki tekst, muuda paranda.
+ESC (käsurežiimi)
+:wq (salvesta ja välju)
+
+Üldiselt avatakse ja salvestatakse faile jooksvas kataloogis. Käsurežiimis töötavad op-süsteemi käsud cd ja pwd. Faili nimes 
+saab kasutada otsiteed (faili suhtelist ja absoluutset nime).
+
+Erivõimalused sisestusrežiimi minekuks:
+A - kursor rea lõppu ja sisestusrežiimi
+I - kursor rea algusesse ja sisestusrežiimi
+o - avab rea antud rea järele ja läheb sisestusrežiimi
+O - avab rea antud rea ette ja läheb sisestusrežiimi
+
+Suuremate redigeerimissammude tegemiseks on kasulik minna tagasi käsurežiimi (ESC)
+Rea kustutamine
+Liigu kustutatavale reale, trüki dd.
+Viie rea kustutamiseks trüki 5dd
+Viimase sammu tagasivõtmine. Lubab järjest mitu sammu ka tagasi võtta.
+u
+Kaks sammu korraga
+2u
+Eelmiste sammude tagasivõtmiseks on tunduvalt rohkem võimalusi, mida tasub eraldi uurida (undolist)
+
+Teksti kopeerimine (yank) ja kleepimine (paste)
+Liigu kopeeritavale reale ja trüki yy (rida läheb vahemällu)
+Viie järjestikuse rea jaoks trüki 5yy
+Kleepimiseks liigu sellele reale mille juures tahad kopeeritud rea(d) lisada
+Trüki p, et lisada rea järele.
+Trüki P, et lisada rea ette.
+
+Rea lõpust sõna kaupa kustutamine dw
+
+Rea kustutamine dd paneb samuti rea(d) vahemällu, kust neid p või P-ga kleepida saab.
+
+Teksti muutmiseks ridade või sõnade kaupa on veel mitmeid võimalusi, sh nn visual mode,
+kus saab näiteks teksti märgistada ja seejärel käsu c abil muuta. Aga esialgu pole need 
+võimalused vast kõige olulisemad.
+  
+Liikumine teksti piires
+Nooleklahvid, end, home, PgUp ja PgDn töötavad ootuspäraselt
+Käsirežiimis töötavad mitmed teised klahvid ka:
+w - järgmine sõna
+b - eelmine sõna
+nooleklahve asendavad h,j,k,l (vasakule, alla, üles, paremle)
+Tähtede kasutamine noolte asemel on abiks siis, kui kasutad klaviatuuri pimekirjas (jäävad kenasti sõrmede alla).
+Kõigi eelnevate käsutähtede puhul saab ette lisada arvu liikumiste arvu määramiseks 
+5h - viis märki vasakule.
+
+^ - rea algus
+$ - rea lõpp
+ctrl-b - ekraanil ettepoole (forward)
+ctrl-f - ekraanil tahapoole (backward)
+G - viimane rida
+1G - esimene rida
+15G - 15. rida (ehk siis saab liikuda suvalisele reale numbri järgi)
+
+Võimalik on liikuda ka lausete () ja lõikude {} kaupa, mida programmikoodis tavaliselt vaja ei ole.
+Märkida ära kohti tekstis, et sinna tagasi tulla jne.
+
+Otsimine
+Otsmist saab seadistada
+:set ignorecase
+Suur ja väiketähtede erinevust ei arvestata
+
+:set smartcase
+Kui kirjutada väiketähtedes, otsitakse ka vasteid suurtähtdese. Kui otsisõnas on aga suurtäht, siis otsitakse täpset vastet.
+
+Käsurežiimis on otsimise märgiks / (otsib üle kogu teksti). / järgi kirjutatakse otsitav fraas, sõna või sümbol
+/while
+Otsib üles ja märgib tekstis kõik sõnad while (ka juhul, kui see on sõna osaks). Käsuga n saab kursorit liigutada järgmise
+leitud sõna juurde. Lisaks on võimalik otsimisel kasutada erinevaid metamärke ja kirjutada sel viisil avaldis, aga seda tuleks
+eraldi uurida, kui esialgsed töövõtted selged.
+
+Mitu akent või sakki (tab)
+-------------------------
+:tabnew 
+avab uue saki
+gt ja gT lubavad nende vahel vahetada.
+:new 
+poolitab akna, akendes on erinevad failid. 
+ctrl-w vahetab akende vahel
+
+Vim kui programmeerija töövahend
+--------------------------------
+Mõned seaded on kasulikud. Nt automaatne taanete lisamine:
+:set autoindent - jätkab uut rida samalt kauguselt eelmise reaga
+:set smartindent - tekitab taandeid, mis peaksid vastama programmeerimiskeele loogikale (peale if-i alustatakse uut rida taandega).
+
+Liikumaks ploki alguse ja lõpu vahel, st {} sulud, saab kasutada märki %. See töötab käsurežiimis. Liiguta kursor ühele sulule, vajuta %, kursor läheb sulu paarilisele.
+
+Käskudena saab käivitada ka opsüsteemi käske. Nt tahad vaadata kataloogi sisu. Selleks kirjuta
+:!ls
+St märk ! enne käsku ütleb, et tegemist shelli käsuga.
+
+Programmi kompileerimiseks ja käivitamiseks on pildi mõttes siiski parem viia vim tööle taustale (ctrl+z). Satud shelli. 
+Kompileerid, kui võimalik, siis käivitad. Käsk fg toob vim-i uuesti esiplaanile (foreground) ning saab jätkata tööd koodiga.
+
+Erinevaid tugesid koodi kirjutamiseks on tegelikult palju. Nad nõuavad enamasti mingi plugina lisamist ja võivad olla samas päris
+head abilised pikema koodiga töötamisel.
+
+Vim-i seadistamine
+Failis .vimrc saab kirjutada igasuguseid seadeid, mida Vim'i käivitamisel arvestatakse. See on mõttekas siis,
+kui otsustad Vim'i oma töövahendiks valida. Nt sama eelnevalt mainitud taanete seadistamine, värvide seadistamine jms.
+
