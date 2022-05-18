@@ -80,10 +80,20 @@ int main() {
     person jacob = {.age = 50, .name = "Jacob"};
     person kate = {.age = 20, .name = "Kate"};
     person mpho = {.age = 89, .name = "Mpho"};
+    person sarah = {.age = 15, .name = "Sarah"};
+    person edna = {.age = 99, .name = "Edna"};
+    person eliza = {.age = 29, .name = "Eliza"};
+    person robert = {.age = 22, .name = "Robert"};
+    person jane = {.age = 22, .name = "Jane"};
 
     insert(&jacob);
     insert(&kate);
     insert(&mpho);
+    insert(&sarah);
+    insert(&edna);
+    insert(&eliza);
+    insert(&robert);
+    insert(&jane);
 
     print_table();
 
