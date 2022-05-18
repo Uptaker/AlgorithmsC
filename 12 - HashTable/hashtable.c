@@ -6,6 +6,7 @@
 
 #define MAX_NAME 256
 #define TABLE_SIZE 10
+#define DELETED_NODE (person*)(0xFFFFFFFFFFFFUL)
 
 typedef struct {
     char name[MAX_NAME];
@@ -37,6 +38,8 @@ void print_table() {
     for (int i = 0; i < TABLE_SIZE; i++) {
         if (hash_table[i] == NULL) {
             printf("\t%i\t---\n", i);
+        } else if (hash_table[i] == DELETED_NODE) {
+            printf("\t%i\t---<deleted>\n", i);
         } else {
             printf("\t%i\t%s\n", i, hash_table[i]->name);
         }
@@ -46,6 +49,16 @@ void print_table() {
 bool insert(person *person) {
     if (person == NULL) return false;
     int index = hash(person->name);
+
+    // linear probing loop
+    for (int i = 0; i < TABLE_SIZE; i++) {
+        int try = (i + index) % TABLE_SIZE;
+        if (hash_table[try] == NULL || hash_table[try] == DELETED_NODE) {
+            hash_table[try] = person;
+            return true;
+        }
+    }
+
     if (hash_table[index] != NULL) return false;
     hash_table[index] = person;
     return true;
@@ -54,22 +67,33 @@ bool insert(person *person) {
 // find by their name
 person *lookup (char *name) {
     int index = hash(name);
-    if (hash_table[index] != NULL && strncmp(hash_table[index]->name, name, TABLE_SIZE) == 0) {
-        return hash_table[index];
-    } else {
-        return NULL;
+
+    // linear probing loop
+    for (int i = 0; i < TABLE_SIZE; i++) {
+        int try = (i + index) % TABLE_SIZE;
+        if (hash_table[index] == NULL) return false;
+        if (hash_table[index] == DELETED_NODE) continue;
+        if (hash_table[index] != NULL && strncmp(hash_table[index]->name, name, TABLE_SIZE) == 0) {
+            return hash_table[try];
+        }
     }
+    return NULL;
 }
 
 person *delete(char *name) {
     int index = hash(name);
-    if (hash_table[index] != NULL && strncmp(hash_table[index]->name, name, TABLE_SIZE) == 0) {
-        person *tmp = hash_table[index];
-        hash_table[index] = NULL;
-        return tmp;
-    } else {
-        return NULL;
+    // linear probing loop
+    for (int i = 0; i < TABLE_SIZE; i++) {
+        int try = (i + index) % TABLE_SIZE;
+        if (hash_table[index] == NULL) return false;
+        if (hash_table[index] == DELETED_NODE) continue;
+        if (hash_table[index] != NULL && strncmp(hash_table[index]->name, name, TABLE_SIZE) == 0) {
+            person* tmp = hash_table[try];
+            hash_table[try] = NULL;
+            return tmp;
+        }
     }
+    return NULL;
 }
 
 int main() {
